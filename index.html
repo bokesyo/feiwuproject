@@ -80,8 +80,10 @@ function recomm_add(pre_code, cour_name){
 }
 	
 
+// 成绩单个人信息写入并打印，即第二按钮执行之命令
 function generate(){
 	
+	// 从用户输入获取个人信息
 	var CHI_NAME = window.document.getElementById("chi_name").value
 	var ENG_NAME = window.document.getElementById("eng_name").value
 	var GENDER = window.document.getElementById("gender").value
@@ -92,7 +94,7 @@ function generate(){
 	var ADM_TIME = window.document.getElementById("month_in").value
 	var COLLEGE = window.document.getElementById("college").value
 	
-	
+	// 检查输入是否非空
 	if (CHI_NAME == ""){
 		alert("中文名未填写")
 		return
@@ -123,6 +125,7 @@ function generate(){
 		return
 	}
 
+	// 在对应 div 写入信息
 	window.document.getElementById("name_stu").innerHTML = window.document.getElementById("name_stu").innerHTML + ENG_NAME
 	window.document.getElementById("name_chi_stu").innerHTML = window.document.getElementById("name_chi_stu").innerHTML + CHI_NAME
 	window.document.getElementById("gender_stu").innerHTML = window.document.getElementById("gender_stu").innerHTML + GENDER
@@ -132,46 +135,42 @@ function generate(){
 	window.document.getElementById("college_stu").innerHTML = COLLEGE
 	window.document.getElementById("scholl_stu").innerHTML = SCHOOL
 	window.document.getElementById("major_stu").innerHTML = MAJOR
+	
+	// 隐藏第二步窗口，显示成绩单
 	window.document.getElementById("main_panel").style.display = "none"
 	window.document.getElementById("transcript").style.display = "block"
 	
+	// 利用系统命令打印当前窗口，即成绩单
 	window.print()
 	
 }
-	
-	
-function fill_school(text){
-	window.document.getElementById("school").value = text
-}
 
-function fill_major(text){
-	window.document.getElementById("major").value = text
-}
-	
-function fill_college(text){
-	window.document.getElementById("college").value = text
-}
-	
 
 function next_1(){
+	// 第一个按钮执行：隐藏第一窗口，显示第二窗口
 	window.document.getElementById("enrollment").style.display = "none"
 	window.document.getElementById("generate").style.display = "block"
 }
 	
 
 function initiate(){
+	// 开始时将所有窗口加载完成，当加载完成时（考虑图片的预加载和编辑成本），立即隐藏第二窗口和成绩单
 	window.document.getElementById("transcript").style.display = "none"
 	window.document.getElementById("generate").style.display = "none"
 }
 	
+	
 function MM_callJS(jsStr) { //v2.0
-  return eval(jsStr)
+	// call javascript
+	return eval(jsStr)
 }
 
 
 </script>
 	
-	
+
+<!-- css 区块 -->
+
 <style type="text/css">
 @media print {
   body {-webkit-print-color-adjust: exact;}
@@ -233,6 +232,8 @@ body {
     background-color: #394579;
 }
 
+
+/* 从SIS系统抄过来的绿色按钮样式 */
 .SSSBUTTON_CONFIRMLINK{
     font-family: Arial,sans-serif;
     font-size: 12px;
@@ -240,25 +241,39 @@ body {
     font-style: bold;
     font-variant: small-caps;
     color: rgba(55,84,33,1.00);
+	
+	/*主色调*/
     background-color: rgb(222,235,181);
+	
     letter-spacing: 1px;
     text-decoration: none;
     text-transform: capitalize;
+	
+	/* 文本中间 */
     text-align: center;
+	
     line-height: 20px;
     margin-left: 4px;
     border-width: 1px;
+	
+	/*定义特征！颜色*/
     border-top-color: rgb(142,203,98);
     border-bottom-color: rgb(114,175,69);
     border-left-color: rgb(142,203,98);
     border-right-color: rgb(114,175,69);
+	
     border-top-style: none;
     border-bottom-style: solid;
     border-left-style: none;
     border-right-style: solid;
+	
+	/* 高度固定但宽度不固定 */
     height: 20px;
+	
     display: block;
     white-space: nowrap;
+	
+	/* 瞄准时光标为手指 */
     cursor: pointer;
     
 }
@@ -271,13 +286,19 @@ body {
 }
 
 .seal {
+	
+	/*印章div背景图像 即定位*/
+	
     background-image: url(seal_registry.png);
     background-repeat: no-repeat;
     vertical-align: middle;
     height: 100px;
     padding-left: 10%;
+	
+	/* 为打印机设定 */
 	-webkit-print-color-adjust: exact;
 }
+	
 .logo_frame {
     
     background-image: url(university_logo.png);
