@@ -80,6 +80,8 @@ function recomm_add(pre_code, cour_name){
 }
 	
 
+
+
 // 成绩单个人信息写入并打印，即第二按钮执行之命令
 function generate(){
 	
@@ -151,6 +153,18 @@ function generate(){
 	window.document.body.style = string
 	console.log(string)
 	
+	//并激活：当浏览器窗口大小改变时，设置显示内容的字体大小
+
+	window.onresize=function(){  
+
+		wid = document.body.clientWidth // 獲取頁面可見區域寬度
+		fontsize = wid / 719 * 14
+		// console.log(fontsize)
+		string = "font-size:" + fontsize + "px"
+		window.document.body.style = string
+		console.log(string)
+		}  
+	
 }
 
 
@@ -181,6 +195,7 @@ function sleep(time){
 }
 	
 function getpdf(){
+	
 	window.document.body.style = "font-size:14px"
 	window.document.getElementById("printButton").innerHTML = ""
 	// 利用系统命令打印当前窗口，即成绩单
@@ -500,9 +515,11 @@ body {
   </div>
   <p>&nbsp;</p>
   <div class="info"></div>
-  <p align="center">Copyright © 2021, University Trash Center and its affiliates. All rights reserved. <a href="https://github.com/feiwuproject/-">本项目已在 GitHub 开源</a><span class="info">	  </span>
+  <p align="center">Copyright © 2021, University Trash Center and its affiliates. All rights reserved. </p>
+  <p align="center"><a href="https://github.com/feiwuproject/-">本项目已在 GitHub 开源</a><span class="info">	  </span>
   </p>
-  <p align="center">特別鳴謝：賢（為我們提供字體改進建議）</p>
+  <p align="center">特別鳴謝：賢（為我們提供字體改進建議）
+</p>
 </p>
 </div>
 	
@@ -664,7 +681,7 @@ body {
   <p>&nbsp;  </p>
   <div class="print_panel" id="printButton">
     <p >
-      <input name="button4" type="button" id="button4" onClick="MM_callJS('getpdf()')" value="Get PDF of Your Transcript">
+      <input name="button4" type="button" id="button4" onClick="MM_callJS('getpdf()')" value="获取成绩单的 PDF 版">
     (此功能仅支持 谷歌 Chrome, 微软 Edge, Mac 版 Safari 浏览器)</p>
   </div>
 </div>
