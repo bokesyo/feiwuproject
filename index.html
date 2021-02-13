@@ -204,11 +204,11 @@ function getpdf(){
 	window.document.body.style = "font-size:14px"
 	window.document.getElementById("printButton").style = "display: none"
 	
-	alert("如果您使用了受支持的浏览器，请在接下来的窗口中选择：另存为 PDF。")
+	alert("您已经按下了按钮，这表明您已确认您的浏览器受支持。如果想要打印，请在接下来的窗口中选择打印机；如果想要保存 PDF 版本，请在接下来的窗口中选择：保存为 PDF。最后，按下确认按钮。")
 	// 利用系统命令打印当前窗口，即成绩单
 	window.print()
 	// sleep(500);
-	alert("如果您使用了受支持的浏览器，那么成绩单 PDF 已经生成。感谢您的使用，下次见！")
+	alert("感谢您的使用，下次见！大学废物中心敬上。")
 	location.reload()
 	// console.log("CLEAR")
 	
@@ -371,6 +371,12 @@ body {
 .boxstyle{
 	font-family: "Albany Std";
 }
+
+.getbutton{
+	font-family: "Albany Std";
+	font-weight: bold;
+}
+	
 .print_panel {
     font-size: 14px;
 	border:2px solid #000;
@@ -474,7 +480,7 @@ body {
     <div class="titles">
       <p><strong>生成成绩单</strong></p>
     </div>
-    <h5><em><strong>「任何懂得HTML结构的人都明白：您输入的任何信息均不会被我们的服务器保存，请放心填写</strong></em><strong>。」</strong><strong></strong></h5>
+    <h5><em><strong>「您输入的任何信息均不会被我们的服务器保存，请放心填写</strong></em><strong>。」</strong><strong></strong></h5>
     <table width="100%" border="0">
       <tbody>
         <tr>
@@ -529,8 +535,11 @@ body {
   <p align="center">Copyright © 2021, University Trash Center and its affiliates. All rights reserved. </p>
   <p align="center"><a href="https://github.com/feiwuproject/-">本项目已在 GitHub 开源</a><span class="info">	  </span>
   </p>
-  <p align="center">特別鳴謝：賢（為我們提供字體改進建議）
-</p>
+  <p align="center">特別鳴謝：</p>
+  <p align="center">贤｜提供字體改進建議</p>
+  <p align="center">问题与建议：</p>
+  <p align="center">请在微信搜索公众号 &quot;MAT3007最劣化&quot; 并在后台留言，或在 <a href="https://github.com/feiwuproject/-/issues">GitHub Issue 页面</a> 提出您的疑问和建议。</p>
+  <p align="center"><em>感谢您的使用。</em></p>
 </p>
 </div>
 	
@@ -689,10 +698,11 @@ body {
   <p>&nbsp;  </p>
   <div class="print_panel" id="printButton">
     <p >
-      <input name="button4" type="button" class="boxstyle" id="button4" onClick="MM_callJS('getpdf()')" value="Get PDF Version for Your Transcript">
+      <input name="button4" type="button" class="getbutton" id="button4" onClick="MM_callJS('getpdf()')" value="Get PDF Version for Your Transcript">
     </p>
     <p ><strong>*** This function <em>only</em> works on <em>Personal Computers</em> with the following <em>supported</em> browsers:</strong></p>
     <p ><strong>Chrome (both Windows and Mac), Edge (both Windows and Mac), Internet Explorer (Windows), Safari (Mac)</strong></p>
+    <p ><em>If you fail to meet the conditions above, we suggest not to click the button.</em></p>
   </div>
 </div>
 <script type="text/javascript">
