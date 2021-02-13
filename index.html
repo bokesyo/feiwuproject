@@ -153,6 +153,9 @@ function generate(){
 	window.document.body.style = string
 	console.log(string)
 	
+	foothei = wid / 719 * 120
+	window.document.getElementById("footer").style = "height: " + foothei + "px"
+	
 	//并激活：当浏览器窗口大小改变时，设置显示内容的字体大小
 
 	window.onresize=function(){  
@@ -163,6 +166,8 @@ function generate(){
 		string = "font-size:" + fontsize + "px"
 		window.document.body.style = string
 		console.log(string)
+		foothei = wid / 719 * 120
+	window.document.getElementById("footer").style = "height: " + foothei + "px"
 		}  
 	
 }
@@ -271,7 +276,6 @@ body {
     background-repeat: repeat;
     padding: 5%;
     background-image: url(bg.png);
-	background-image: url(bg.png);
 }
 .enroll_style {
     background-color: #FFFFFF;
@@ -346,11 +350,13 @@ body {
     background-image: url(seal_registry.png);
     background-repeat: no-repeat;
     vertical-align: middle;
-    height: 100px;
     padding-left: 10%;
 	
 	/* 为打印机设定 */
 	-webkit-print-color-adjust: exact;
+	
+	/*上下居中*/
+	
 }
 	
 .logo_frame {
@@ -362,12 +368,13 @@ body {
 	-webkit-print-color-adjust: exact;
 }
 
-	.boxstyle{
-		font-family: "Albany Std";
-	}
+.boxstyle{
+	font-family: "Albany Std";
+}
 .print_panel {
     font-size: 14px;
 }
+
 </style>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -527,7 +534,7 @@ body {
 	
 	
 	
-<div class="main_body" id="transcript" style="display: block;">
+<div class="main_body" id="transcript" style="display: block; backgroun-size:10%">
   <p><img src="header.png" width="100%" alt=""/></p>
   <table width="100%" border="0">
     <tbody>
@@ -571,7 +578,7 @@ body {
   <hr color="#000000">
   <p>&nbsp;</p>
   <p><strong>2013-  Infinity Term XI</strong></p>
-  <div class="logo_frame">
+  <div class="logo_frame" style="background-size:30%">
     <table width="100%" border="0" align="center" id="main_table">
       <tbody>
         <tr>
@@ -666,16 +673,13 @@ body {
     </tbody>
   </table>
   <p>&nbsp;</p>
-  <table width="100%" border="0" id="footer">
+  <table width="100%" border="0" id="footer" style="height: 100px">
     <tbody>
       <tr>
-        <td width="50%"><p>Invalid if impressed with the Seal of University<br>
+        <td width="50%" class=><p>Invalid if impressed with the Seal of University<br>
           The maximum GPA attaiinable is 4.000 <br>
         </p></td>
-        <td width="35%"><div class="seal">
-          <p>&nbsp;</p>
-          <p>Issue Date: 14 Mar 2013</p>
-        </div></td>
+        <td width="35%" valign="middle" class="seal" style="background-size: 50%">Issue Date: 14 Mar 2013</td>
         <td width="15%">PAGE JIMMY of JIMMY</td>
       </tr>
     </tbody>
@@ -683,7 +687,7 @@ body {
   <p>&nbsp;  </p>
   <div class="print_panel" id="printButton">
     <p >
-      <input name="button4" type="button" id="button4" onClick="MM_callJS('getpdf()')" value="获取成绩单的 PDF 版">
+      <input name="button4" type="button" class="boxstyle" id="button4" onClick="MM_callJS('getpdf()')" value="获取成绩单的 PDF 版">
     </p>
     <p >*** This function <em>only</em> works on <em>Personal Computers</em> with the following <em>supported</em> browsers:</p>
     <p >Chrome (both Windows and Mac), Edge (both Windows and Mac), Internet Explorer (Windows), Safari (Mac)</p>
