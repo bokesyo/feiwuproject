@@ -202,7 +202,7 @@ function sleep(time){
 function getpdf(){
 	
 	window.document.body.style = "font-size:14px"
-	window.document.getElementById("printButton").innerHTML = ""
+	window.document.getElementById("printButton").style = "display: none"
 	
 	alert("如果您使用了受支持的浏览器，请在接下来的窗口中选择：另存为 PDF。")
 	// 利用系统命令打印当前窗口，即成绩单
