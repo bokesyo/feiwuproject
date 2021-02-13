@@ -140,13 +140,16 @@ function generate(){
 	window.document.getElementById("main_panel").style.display = "none"
 	window.document.getElementById("transcript").style.display = "block"
 	
+	// 利用系统命令打印当前窗口，即成绩单
+	window.print()
+	
 	// 手機適配
 	wid = document.body.clientWidth // 獲取頁面可見區域寬度
 	fontsize = wid / 719 * 14
-	console.log(fontsize)
-	
-	// 利用系统命令打印当前窗口，即成绩单
-	window.print()
+	// console.log(fontsize)
+	string = "font-size:" + fontsize + "px"
+	window.document.body.style = string
+	console.log(string)
 	
 }
 
@@ -215,7 +218,6 @@ a:link,a:visited{
 }
 body,td,th {
     font-family: "Albany Std";
-    font-size: 14px;
 }
 body {
     background-image: url();
@@ -335,7 +337,7 @@ body {
 	
 
 
-<body>
+<body style="font-size:14px">
 <div id = "main_panel" style="display:block" class="panel">
   <h1 align="center"><img src="logo_3_ge2.png" width="62%" alt=""/></h1>
   <p align="center">&nbsp;</p>
