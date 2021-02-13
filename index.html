@@ -201,13 +201,10 @@ function getpdf(){
 	// 利用系统命令打印当前窗口，即成绩单
 	window.print()
 	// sleep(500);
-	
-}
-	
-function bye(){
 	alert("如果您使用了受支持的浏览器，那么成绩单 PDF 已经生成。感谢您的使用，下次见！")
 	location.reload()
 	console.log("CLEAR")
+	
 }
 
 
@@ -685,10 +682,9 @@ body {
   <div class="print_panel" id="printButton">
     <p >
       <input name="button4" type="button" id="button4" onClick="MM_callJS('getpdf()')" value="获取成绩单的 PDF 版">
-    (此功能仅支持 谷歌 Chrome, 微软 Edge, Mac 版 Safari 浏览器)</p>
+    (此功能仅支持：电脑版谷歌 Chrome, 电脑版微软 Edge, Internet Explorer，Mac 版 Safari 浏览器)</p>
   </div>
 </div>
-	
 <script type="text/javascript">
 
 window.document.getElementById("cgpa").innerHTML = (Math.random()*3).toFixed(3)
