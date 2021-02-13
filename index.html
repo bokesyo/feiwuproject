@@ -190,7 +190,7 @@ function sleep(time){
  while(true){
  if (new Date().getTime() > endTime){
   return;
- } 
+ }
  }
 }
 	
@@ -198,12 +198,14 @@ function getpdf(){
 	
 	window.document.body.style = "font-size:14px"
 	window.document.getElementById("printButton").innerHTML = ""
+	
+	alert("如果您使用了受支持的浏览器，请在接下来的窗口中选择：另存为 PDF。")
 	// 利用系统命令打印当前窗口，即成绩单
 	window.print()
 	// sleep(500);
 	alert("如果您使用了受支持的浏览器，那么成绩单 PDF 已经生成。感谢您的使用，下次见！")
 	location.reload()
-	console.log("CLEAR")
+	// console.log("CLEAR")
 	
 }
 
