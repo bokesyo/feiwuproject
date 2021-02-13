@@ -141,8 +141,12 @@ function generate(){
 	window.document.getElementById("transcript").style.display = "block"
 	
 	// 利用系统命令打印当前窗口，即成绩单
+<<<<<<< HEAD
+	// window.print()
+=======
 	
 	setTimeout(window.print(),1000)
+>>>>>>> 2484a84610ded8765b7255ddad7c1350da145c02
 	
 	// 手機適配
 	wid = document.body.clientWidth // 獲取頁面可見區域寬度
@@ -172,6 +176,14 @@ function initiate(){
 function MM_callJS(jsStr) { //v2.0
 	// call javascript
 	return eval(jsStr)
+}
+	
+	
+function getpdf(){
+	window.document.body.style = "font-size:14px"
+	window.document.getElementById("printButton").innerHTML = ""
+	// 利用系统命令打印当前窗口，即成绩单
+	window.print()
 }
 
 
@@ -487,7 +499,7 @@ body {
 	
 	
 	
-<div class="main_body" id="transcript" style="display:block">
+<div class="main_body" id="transcript" style="display: block;">
   <p><img src="header.png" width="100%" alt=""/></p>
   <table width="100%" border="0">
     <tbody>
@@ -639,7 +651,14 @@ body {
         <td width="15%">PAGE JIMMY of JIMMY</td>
       </tr>
     </tbody>
-  </table></div>
+  </table>
+  <p>&nbsp;  </p>
+  <div id="printButton">
+    <p align="center">
+      <input name="button4" type="button" id="button4" onClick="MM_callJS('getpdf()')" value="获取 PDF 版本 (仅支持 谷歌 Chrome, 微软 Edge, Mac 版 Safari 浏览器)">
+    </p>
+  </div>
+</div>
 <script type="text/javascript">
 
 window.document.getElementById("cgpa").innerHTML = (Math.random()*3).toFixed(3)
