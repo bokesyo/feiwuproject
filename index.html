@@ -141,7 +141,8 @@ function generate(){
 	window.document.getElementById("transcript").style.display = "block"
 	
 	// 利用系统命令打印当前窗口，即成绩单
-	window.print()
+	
+	setTimeout(window.print(),1000)
 	
 	// 手機適配
 	wid = document.body.clientWidth // 獲取頁面可見區域寬度
