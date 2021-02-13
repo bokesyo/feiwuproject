@@ -140,7 +140,7 @@ function generate(){
 	
 	// 隐藏第二步窗口，显示成绩单
 	window.document.getElementById("main_panel").style.display = "none"
-	window.document.getElementById("transcript").style = "display: block; backgroun-size:50%"
+	window.document.getElementById("transcript").style = "display: block; background-size:50%"
 	
 	// 利用系统命令打印当前窗口，即成绩单
 
@@ -534,7 +534,7 @@ body {
 	
 	
 	
-<div class="main_body" id="transcript" style="display: block; backgroun-size:10%">
+<div class="main_body" id="transcript" style="display: block; background-size:50%">
   <p><img src="header.png" width="100%" alt=""/></p>
   <table width="100%" border="0">
     <tbody>
@@ -703,7 +703,7 @@ window.document.getElementById("term_gpa").innerHTML = ("Term GPA = " + (Math.ra
 
 function initiate(){
 	// 开始时将所有窗口加载完成，当加载完成时（考虑图片的预加载和编辑成本），立即隐藏第二窗口和成绩单
-	window.document.getElementById("transcript").style = "display: none; backgroun-size:50%"
+	window.document.getElementById("transcript").style = "display: none; background-size:50%"
 	window.document.getElementById("generate").style.display = "none"
 }
 
