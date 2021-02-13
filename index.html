@@ -140,6 +140,11 @@ function generate(){
 	window.document.getElementById("main_panel").style.display = "none"
 	window.document.getElementById("transcript").style.display = "block"
 	
+	// 手機適配
+	wid = document.body.clientWidth // 獲取頁面可見區域寬度
+	fontsize = wid / 719 * 14
+	console.log(fontsize)
+	
 	// 利用系统命令打印当前窗口，即成绩单
 	window.print()
 	
@@ -316,7 +321,6 @@ body {
     background-repeat: no-repeat;
     background-position: center top;
 	min-height: 250px;
-	min-width: 546px;
 	-webkit-print-color-adjust: exact;
 }
 
@@ -548,10 +552,10 @@ body {
     </table>
     <p>Dishonour(s)/Penalty(s): Trashcan's List 2013-Infinity </p>
   </div>
-  <table width="100%" border="0" id="footer2">
+  <table width="100%" border="0" align="center" id="footer2">
     <tbody>
       <tr>
-        <td width="40%" align="center"><p>****************************************</p></td>
+        <td width="40%" align="center">****************************************</td>
         <td width="20%" align="center">Summary</td>
         <td width="40%" align="center">****************************************</td>
       </tr>
