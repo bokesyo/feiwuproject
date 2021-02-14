@@ -156,6 +156,11 @@ function generate(){
 	foothei = wid / 719 * 120
 	window.document.getElementById("footer").style = "height: " + foothei + "px"
 	
+	hrsize = 1.67 * wid / 719
+	
+	window.document.getElementById("upperhr").size = hrsize + ""
+	window.document.getElementById("lowerhr").size = hrsize + ""
+	
 	//并激活：当浏览器窗口大小改变时，设置显示内容的字体大小
 
 	window.onresize=function(){  
@@ -167,8 +172,14 @@ function generate(){
 		window.document.body.style = string
 		console.log(string)
 		foothei = wid / 719 * 120
-	window.document.getElementById("footer").style = "height: " + foothei + "px"
-		}  
+		window.document.getElementById("footer").style = "height: " + foothei + "px"
+		
+		hrsize = 1.67 * wid / 719
+	
+		window.document.getElementById("upperhr").size = hrsize + ""
+		window.document.getElementById("lowerhr").size = hrsize + ""
+		
+	}  
 	
 }
 
@@ -561,7 +572,7 @@ body {
       </tr>
     </tbody>
   </table>
-  <hr color="#000000">
+  <hr color="#000000" id="upperhr">
   <table width="100%" border="0">
     <tbody>
       <tr>
@@ -586,7 +597,7 @@ body {
       </tr>
     </tbody>
   </table>
-  <hr color="#000000">
+  <hr id="lowerhr" color="#000000">
   <p>&nbsp;</p>
   <p><strong>2013-  Infinity Term XI</strong></p>
   <div class="logo_frame" style="background-size:30%">
