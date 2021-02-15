@@ -9,6 +9,7 @@
 <script type="text/javascript">
 
 var num_course = 0 // 已选课程数量
+var status = 0
 
 function add_table(){
 	// 把选定的课加入成绩单表格
@@ -80,6 +81,38 @@ function recomm_add(pre_code, cour_name){
 }
 	
 
+function resizeAgent(){
+	console.log("Hey")
+	// 手机适配
+	
+	wid = document.body.clientWidth // 獲取頁面可見區域寬度
+	
+	if (wid > 719){
+		status = 1
+		ratio = parseInt(719 / wid * 100)
+		margin_ratio = parseInt((1 - ratio / 100) / 2 * 100)
+		
+		window.document.getElementById("widther").style = "width:" + ratio + "%; margin-left: " + margin_ratio + "%; margin-right: " + margin_ratio +"%"
+		
+	} else {
+		status = 2
+		fontsize = wid / 719 * 14
+		// console.log(fontsize)
+		string = "font-size:" + fontsize + "px"
+		window.document.body.style = string
+		console.log(string)
+
+		foothei = wid / 719 * 120
+		window.document.getElementById("footer").style = "height: " + foothei + "px"
+
+		hrsize = 1.67 * wid / 719
+
+		window.document.getElementById("upperhr").size = hrsize + ""
+		window.document.getElementById("lowerhr").size = hrsize + ""
+	}
+}
+	
+
 
 
 // 成绩单个人信息写入并打印，即第二按钮执行之命令
@@ -143,43 +176,15 @@ function generate(){
 	window.document.getElementById("transcript").style = "display: block; background-size:50%"
 	
 	// 利用系统命令打印当前窗口，即成绩单
-
+	// width:50%; margin-left: 25%; margin-right: 25%
 	
 	// 手機適配
-	wid = document.body.clientWidth // 獲取頁面可見區域寬度
-	fontsize = wid / 719 * 14
-	// console.log(fontsize)
-	string = "font-size:" + fontsize + "px"
-	window.document.body.style = string
-	console.log(string)
-	
-	foothei = wid / 719 * 120
-	window.document.getElementById("footer").style = "height: " + foothei + "px"
-	
-	hrsize = 1.67 * wid / 719
-	
-	window.document.getElementById("upperhr").size = hrsize + ""
-	window.document.getElementById("lowerhr").size = hrsize + ""
+
+	resizeAgent()
 	
 	//并激活：当浏览器窗口大小改变时，设置显示内容的字体大小
 
-	window.onresize=function(){  
-
-		wid = document.body.clientWidth // 獲取頁面可見區域寬度
-		fontsize = wid / 719 * 14
-		// console.log(fontsize)
-		string = "font-size:" + fontsize + "px"
-		window.document.body.style = string
-		console.log(string)
-		foothei = wid / 719 * 120
-		window.document.getElementById("footer").style = "height: " + foothei + "px"
-		
-		hrsize = 1.67 * wid / 719
-	
-		window.document.getElementById("upperhr").size = hrsize + ""
-		window.document.getElementById("lowerhr").size = hrsize + ""
-		
-	}  
+	window.onresize=resizeAgent()
 	
 }
 
@@ -214,6 +219,12 @@ function getpdf(){
 	
 	window.document.body.style = "font-size:14px"
 	window.document.getElementById("printButton").style = "display: none"
+	if (status == 1){
+		window.document.getElementById("widther").style = ""
+		console.log("Status 1 width back")
+	} else if (status == 2){
+		console.log("Status 2 width not change")
+	}
 	
 	alert("您已经按下了按钮，这表明您已确认您的浏览器受支持。如果想要打印，请在接下来的窗口中选择打印机；如果想要保存 PDF 版本，请在接下来的窗口中选择：保存为 PDF。最后，按下确认按钮。")
 	// 利用系统命令打印当前窗口，即成绩单
@@ -555,7 +566,7 @@ body {
 </div>
 	
 	
-<div id="widther" style="width:50%; margin-left: 25%; margin-right: 25%">
+<div id="widther" style="">
 <div class="main_body" id="transcript" style="display: block; background-size:50%">
   <p><img src="header.png" width="100%" alt=""/></p>
   <table width="100%" border="0">
@@ -701,7 +712,7 @@ body {
         <td width="50%" class=><p>Invalid if impressed with the Seal of University<br>
           The maximum GPA attaiinable is 4.000 <br>
         </p></td>
-        <td width="35%" valign="middle" class="seal" style="background-size: 50%">Issue Date: 14 Mar 2013</td>
+        <td width="35%" valign="middle" class="seal" style="background-size: 50%; min-height: 100px">Issue Date: 14 Mar 2013</td>
         <td width="15%">PAGE JIMMY of JIMMY</td>
       </tr>
     </tbody>
