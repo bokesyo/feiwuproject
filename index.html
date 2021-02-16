@@ -12,6 +12,10 @@ var num_course = 0 // 已选课程数量
 var status = 0
 
 function add_table(){
+	if (num_course == 10){
+		alert("最多允许选10门课。请点击下方按钮进入下一步。")
+		return
+	}
 	// 把选定的课加入成绩单表格
 	var code = window.document.getElementById("code") // 读取输入的课程代码 1001
 	var name = window.document.getElementById("name") // 读取课程名称 Calculus
@@ -56,6 +60,11 @@ function add_table(){
 
 
 function recomm_add(pre_code, cour_name){
+	
+	if (num_course == 10){
+		alert("最多允许选10门课。请点击下方按钮进入下一步。")
+		return
+	}
 	// 推荐的课程添加
 	num_course = num_course + 1
 	
@@ -296,9 +305,6 @@ function getpdf_project(){
 	window.document.getElementById("logo").className = "logo_frame_project" // 取消彩色校徽
 	
 	window.document.getElementById("foot_seal").className = "seal_project" // 取消教务处印章
-	
-	
-	
 	
 	//
 	
