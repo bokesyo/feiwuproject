@@ -234,6 +234,10 @@ function generate(){
 
 
 function next_1(){
+	if (num_course == 0){
+		alert("请至少选1门课。")
+		return
+	}
 	// 第一个按钮执行：隐藏第一窗口，显示第二窗口
 	window.document.getElementById("enrollment").style.display = "none"
 	window.document.getElementById("generate").style.display = "block"
