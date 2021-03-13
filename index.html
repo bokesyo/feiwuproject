@@ -76,7 +76,7 @@ function recomm_add(pre_code, cour_name){
 	
   	x1.innerHTML = pre_code
   	x2.innerHTML = cour_name
-	x3.innerHTML = "F" // 推荐课程成绩一律 F
+	x3.innerHTML = "A" // 推荐课程成绩一律 A
 	x4.innerHTML = "100.0%"
 	
 	if (num_course == 1){
@@ -555,16 +555,16 @@ body {
         <tr>
           <td width="30%">Expected Grade</td>
           <td width="70%"><select name="grade" class="boxstyle" id="grade">
-            <option value="F">A</option>
-            <option value="D">A-</option>
-            <option value="C">B+</option>
-            <option value="C+">B</option>
-            <option value="B-" selected="selected">B-</option>
-            <option value="B">C+</option>
-            <option value="B+">C</option>
-            <option value="D-">D</option>
-            <option value="F">Fail</option>
-            <option value="F">Pass</option>
+            <option value="A" selected="selected">A</option>
+            <option value="A">A-</option>
+            <option value="A">B+</option>
+            <option value="A">B</option>
+            <option value="A">B-</option>
+            <option value="A">C+</option>
+            <option value="A">C</option>
+            <option value="A">D</option>
+            <option value="A">Fail</option>
+            <option value="A">Pass</option>
           </select></td>
         </tr>
       </tbody>
@@ -616,11 +616,11 @@ body {
       <tbody>
         <tr>
           <td width="30%">Name (English)</td>
-          <td width="70%"><input name="eng_name" type="text" class="boxstyle" id="eng_name" value="LAO, Feiwu"></td>
+          <td width="70%"><input name="eng_name" type="text" class="boxstyle" id="eng_name" value="SHEN, Xian"></td>
         </tr>
         <tr>
           <td width="30%">Name (Chinese)</td>
-          <td width="70%"><input name="chi_name" type="text" class="boxstyle" id="chi_name" value="费武"></td>
+          <td width="70%"><input name="chi_name" type="text" class="boxstyle" id="chi_name" value="神仙"></td>
         </tr>
         <tr>
           <td width="30%">Gender</td>
@@ -632,27 +632,27 @@ body {
         </tr>
         <tr>
           <td width="30%">Student ID</td>
-          <td width="70%"><input name="stu_id" type="text" class="boxstyle" id="stu_id" value="115010001"></td>
+          <td width="70%"><input name="stu_id" type="text" class="boxstyle" id="stu_id" value="119010001"></td>
         </tr>
         <tr>
           <td width="30%">Date of Birth</td>
-          <td width="70%"><input name="birth" type="date" class="boxstyle" id="birth" value="1900-01-01"></td>
+          <td width="70%"><input name="birth" type="date" class="boxstyle" id="birth" value="1999-01-01"></td>
         </tr>
         <tr>
           <td width="30%">School</td>
-          <td width="70%"><input name="school" type="text" class="boxstyle" id="school" value="Study Yard"></td>
+          <td width="70%"><input name="school" type="text" class="boxstyle" id="school" value="Shen Xue Yuan"></td>
         </tr>
         <tr>
           <td width="30%">Major</td>
-          <td width="70%"><input name="major" type="text" class="boxstyle" id="major" value="Applied Trashmatic"></td>
+          <td width="70%"><input name="major" type="text" class="boxstyle" id="major" value="Applied Theology"></td>
         </tr>
         <tr>
           <td>College</td>
-          <td><input name="college" type="text" class="boxstyle" id="college" value="Book Yard"></td>
+          <td><input name="college" type="text" class="boxstyle" id="college" value="Yu Huang Bao Dian"></td>
         </tr>
         <tr>
           <td width="30%">Admitted in</td>
-          <td width="70%"><input name="month_in" type="text" class="boxstyle" id="month_in" value="Sep 2015"></td>
+          <td width="70%"><input name="month_in" type="text" class="boxstyle" id="month_in" value="Sep 2019"></td>
         </tr>
       </tbody>
     </table>
@@ -732,7 +732,7 @@ body {
           <td width="25%" align="center"><p><br>
           </p></td>
           <td width="25%" align="center">&nbsp;</td>
-          <td width="25%" align="center">Units Passed = 0.0</td>
+          <td width="25%" align="center">Units Passed = Infinity</td>
           <td width="25%" align="center"><div id="term_gpa">Term GPA = </div></td>
         </tr>
       </tbody>
@@ -759,7 +759,7 @@ body {
       </tr>
       <tr>
         <td width="25%" align="center">CUHK(SZ)</td>
-        <td align="center">0.0</td>
+        <td align="center">Infinity</td>
         <td width="25%" align="center"><div id="cgpa">0.000</div></td>
         <td width="25%" align="center"><div id="mgpa">0.000</div></td>
       </tr>
@@ -848,11 +848,12 @@ body {
 </div>
 <script type="text/javascript">
 
-window.document.getElementById("cgpa").innerHTML = (Math.random()*3).toFixed(3)
+window.document.getElementById("cgpa").innerHTML = "4.000"
+// window.document.getElementById("cgpa").innerHTML = (Math.random()*3).toFixed(3)
 	
-window.document.getElementById("mgpa").innerHTML = (Math.random()*3).toFixed(3)
+window.document.getElementById("mgpa").innerHTML = "4.000"
 	
-window.document.getElementById("term_gpa").innerHTML = ("Term GPA = " + (Math.random()*3).toFixed(3))
+window.document.getElementById("term_gpa").innerHTML = ("Term GPA = " + "4.000")
 
 function initiate(){
 	// 开始时将所有窗口加载完成，当加载完成时（考虑图片的预加载和编辑成本），立即隐藏第二窗口和成绩单
